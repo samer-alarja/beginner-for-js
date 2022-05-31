@@ -1,0 +1,45 @@
+<div class="class1"><b>My name is</b>: </div>
+
+<style>
+    .aaaa{ background-color: aqua;
+    width: 100px;
+height: 100px;
+position:relative;}
+    /* .test {
+        background: #ff1a1a;
+        border: 1px solid white;
+        padding: 10px;
+    } */
+</style>
+<br />
+<input type="text" value="" name="ted" class="myInput" onkeydown="khalel();" />
+<a href="http://www.google.com" id="deleting">clear</a>
+
+
+<div class="aaaa" style=" width:200px; height:200px; ">test</div>
+
+<script src=" https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+
+<script>
+    $(document).ready(function () {
+        var res = $('.class1').html();
+
+    });
+    function khalel() {
+        str = $(".myInput").val();
+        $('.class1').text(str);
+    }
+    $(document).ready(function () {
+        $('#deleting').on('click', function (e) {
+            e.preventDefault();
+            $('.aaaa').addClass('test')
+            $('.aaaa').append('test')
+            $(".aaaa").animate({ top : 400 });
+            $(".aaaa").animate({ left: 1140 });
+
+
+        })
+    });
+</script>

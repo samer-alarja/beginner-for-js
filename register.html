@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<style>
+  /* welcome to jroan */
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous">
+  <script>
+    function validatemyform() {
+        var firstname = document.getElementById('fname').value;
+        if (firstname == '') {
+          alert('Please enter Your first name');
+          return false;
+        }
+        // validate last name
+        var lastname = document.getElementById('lname').value;
+        if (lastname == '') {
+          alert('Please enter Your last name');
+          return false;
+        }
+        // validate email format
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var email = document.getElementById('email').value;
+        if (!email.match(mailformat)) {
+          alert('Please enter Your email');
+          return false;
+        }
+        // validate password min lenght 8 and have character numbers
+        var password = document.getElementById('password').value;
+        if (password == '' || password.length < 8 || !password.match(/[0-9]/)) {
+          alert('Please enter Your password ss');
+          return false;
+        }
+      } 
+  </script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <img src="assets/images/download.jpg" alt="altra">
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <ul>
+          <li><a href="about.html">about us</a></li>
+          <li><a href="register.html">register page</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </div>
+      <div class="col-md-8 mt-3">
+
+        <form action="" method="post" onsubmit="return validatemyform();">
+          <h2>Persoanl Info</h2>
+          <div class="mb-3">
+            <label class="form-label" for="firstname">
+              First Name:
+            </label>
+            <input type="text" id="fname" class="form-control"
+              name="firstname" />
+          </div>
+          <div>
+            <label for="lastname">
+              Last Name:
+            </label>
+            <input type="text" id="lname" class="form-control"
+              name="lastname" />
+          </div>
+          <div>
+            <div>
+              <label for="password">
+                Password:
+              </label>
+              <input type="password" id="password" class="form-control"
+                name="password" />
+            </div>
+            <div>
+              <label for="email">
+                Email:
+              </label>
+              <input type="text" id="email" class="form-control" name="email" />
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
